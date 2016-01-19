@@ -18,7 +18,7 @@ hour();            // the hour now  (0-23)
 minute();          // the minute now (0-59)          
 second();          // the second now (0-59) 
 day();             // the day now (1-31)
-weekday();         // day of the week, Sunday is day 0 
+weekday();         // day of the week, Monday is day 0 
 month();           // the month now (1-12)
 year();            // the full four digit year: (2009, 2010 etc) 
 
@@ -43,6 +43,10 @@ following functions eliminates this probglem
   year(t);          // the year for the given time t  
   
   
+Depending on location, week begins either on Sunday or Monday.
+The following function allows defining an offset. If such offset is 0 week starts on Monday, otherwise Sunday (weekday() will return 2 on Monday)
+weekdayOffset(uint8_t o);
+
 Functions for managing the timer services are:  
 setTime(t);             // set the system time to the give time t
 setTime(hr,min,sec,day,mnth,yr); // alternative to above, yr is 2 or 4 digit yr (2010 or 10 sets year to 2010)
