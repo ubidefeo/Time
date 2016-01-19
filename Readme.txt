@@ -43,8 +43,8 @@ following functions eliminates this probglem
   year(t);          // the year for the given time t  
   
   
-Depending on location, week begins either on Sunday or Monday.
-The following function allows defining an offset. If such offset is 0 week starts on Monday, otherwise Sunday (weekday() will return 2 on Monday)
+Depending on location-based customs, the week begins either on Sunday or Monday.
+The following function allows defining an offset. If such offset is 0 the week begins on Monday, otherwise on Sunday (i.e. weekday() will return 2 on a Monday)
 weekdayOffset(uint8_t o);
 
 Functions for managing the timer services are:  

@@ -112,7 +112,7 @@ int day(time_t t) { // the day for the given time (0-6)
   return tm.Day;
 }
 
-int weekday() {   // Sunday is day 1
+int weekday() {   // Wether Sunday or Monday is the first day [day 0] depends on WdayOffset
   return  weekday(now()); 
 }
 
@@ -120,7 +120,7 @@ int weekday(time_t t) {
   refreshCache(t);
   return tm.Wday;
 }
-int weekdayOffset(uint8_t o){
+int weekdayOffset(uint8_t o){ // set the WdayOffset to make either Monday or Sunday the first day in the week (default is Monday day 0)
   tm.WdayOffset = (o > 0) ? 1 : 0;
 }
    
