@@ -121,7 +121,7 @@ int weekday(time_t t) {
   return tm.Wday;
 }
 int weekdayOffset(uint8_t o){
-  tm.WdayOffset = (o >= 1) ? 1 : 0;
+  tm.WdayOffset = (o > 0) ? 1 : 0;
 }
    
 int month(){
