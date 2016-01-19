@@ -50,6 +50,7 @@ typedef struct  {
   uint8_t Day;
   uint8_t Month; 
   uint8_t Year;   // offset from 1970; 
+  uint8_t WdayOffset = 0; // setting this to 1 will make Sunday day 1 in the week
 } 	tmElements_t, TimeElements, *tmElementsPtr_t;
 
 //convenience macros to convert to and from tm years 
@@ -110,8 +111,9 @@ int     second();          // the second now
 int     second(time_t t);  // the second for the given time
 int     day();             // the day now 
 int     day(time_t t);     // the day for the given time
-int     weekday();         // the weekday now (Sunday is day 1) 
+int     weekday();         // the weekday now (Sunday is day 1 depending on WdayOffset) 
 int     weekday(time_t t); // the weekday for the given time 
+int     weekdayOffset(uint8_t o); // the offset upon which weekday will rely (o = 1 will make Sunday day 1)
 int     month();           // the month now  (Jan is month 1)
 int     month(time_t t);   // the month for the given time
 int     year();            // the full four digit year: (2009, 2010 etc) 

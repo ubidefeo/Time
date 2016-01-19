@@ -120,6 +120,9 @@ int weekday(time_t t) {
   refreshCache(t);
   return tm.Wday;
 }
+int weekdayOffset(uint8_t o){
+  tm.WdayOffset = (o >= 1) ? 1 : 0;
+}
    
 int month(){
   return month(now()); 
@@ -165,7 +168,7 @@ void breakTime(time_t timeInput, tmElements_t &tm){
   time /= 60; // now it is hours
   tm.Hour = time % 24;
   time /= 24; // now it is days
-  tm.Wday = ((time + 4) % 7) + 1;  // Sunday is day 1 
+  tm.Wday = ((time + 4) % 7) + tm.WdayOffset;  // you need to explicitly give an offset of 1 if you want Sunday to be day 1 in the week
   
   year = 0;  
   days = 0;
