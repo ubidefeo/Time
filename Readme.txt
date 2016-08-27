@@ -48,7 +48,7 @@ The following function allows defining an offset. If such offset is 0 the week b
 weekdayOffset(uint8_t o);
 
 Functions for managing the timer services are:  
-setTime(t);             // set the system time to the give time t
+setTime(t);             // set the system time to the given time t
 setTime(hr,min,sec,day,mnth,yr); // alternative to above, yr is 2 or 4 digit yr (2010 or 10 sets year to 2010)
 adjustTime(adjustment); // adjust system time by adding the adjustment value
 
@@ -104,7 +104,7 @@ Changes in the Time library API:
 - time elements are functions returning int (they are variables in DateTime)
 - Years start from 1970 
 - days of the week and months start from 1 (they start from 0 in DateTime)
-- DateStrings do not require a seperate library
+- DateStrings do not require a separate library
 - time elements can be accessed non-atomically (in DateTime they are always atomic)
 - function added to automatically sync time with extrnal source
 - localTime and maketime parameters changed, localTime renamed to breakTime

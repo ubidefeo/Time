@@ -21,6 +21,7 @@ isPM	KEYWORD2
 weekday	KEYWORD2
 setTime	KEYWORD2
 adjustTime	KEYWORD2
+weekDayOffset
 setSyncProvider	KEYWORD2
 setSyncInterval	KEYWORD2
 timeStatus	KEYWORD2

@@ -113,7 +113,7 @@ int     day();             // the day now
 int     day(time_t t);     // the day for the given time
 int     weekday();         // the weekday now (Monday is the first day [day 0] unless WdayOffset is set to 1) 
 int     weekday(time_t t); // the weekday for the given time 
-int     weekdayOffset(uint8_t o); // the offset to compute weekday() (o > 0 will make Sunday the first day [day 0])
+int     setWeekDayOffset(uint8_t o); // the offset to compute weekday() (o > 0 will make Sunday the first day [day 0])
 int     month();           // the month now  (Jan is month 1)
 int     month(time_t t);   // the month for the given time
 int     year();            // the full four digit year: (2009, 2010 etc) 

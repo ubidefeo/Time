@@ -57,13 +57,14 @@ const char dayStr4[] PROGMEM = "Wednesday";
 const char dayStr5[] PROGMEM = "Thursday";
 const char dayStr6[] PROGMEM = "Friday";
 const char dayStr7[] PROGMEM = "Saturday";
+const char dayStr8[] PROGMEM = "Sunday"; // this last entry will only be used if offset is 1 (first day of week is Monday)
 
 const PROGMEM char * const PROGMEM dayNames_P[] =
 {
    dayStr0,dayStr1,dayStr2,dayStr3,dayStr4,dayStr5,dayStr6,dayStr7
 };
 
-const char dayShortNames_P[] PROGMEM = "ErrSunMonTueWedThuFriSat";
+const char dayShortNames_P[] PROGMEM = "ErrSunMonTueWedThuFriSatSun"; // added "Sun" to the char string to support Monday as first day of week
 
 /* functions to return date strings */
 
@@ -81,8 +82,9 @@ char* monthShortStr(uint8_t month)
    return buffer;
 }
 
-char* dayStr(uint8_t day) 
+char* dayStr(uint8_t day, uint8_t offset = 0) 
 {
+  
    strcpy_P(buffer, (PGM_P)pgm_read_word(&(dayNames_P[day])));
    return buffer;
 }
